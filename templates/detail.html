@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block base %}
+<p class="margin">Предприятие(служба):{{home.category}}</p>
+<p>{{home.text}}</p>
+
+<p class="ms-2">Дата выписки предписания:{{home.date}}</p>
+<p class="margin">Дата исполнения:{{home.date_answer }}</p>
+
+<p class="margin mb-3">Выполнил(а):{{home.fio}}</p>
+
+{% if is_check %}
+<div class="alert alert-danger w-50 col-md-6 offset-md-3 " role="alert">
+        "Дата исполнения" настала
+    </div>
+{% endif %}
+
+
+
+{% endblock %}

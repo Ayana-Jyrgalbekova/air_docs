@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block base %}
+{% for cat in categories %}
+<p>№{{cat.id}}</p>
+<p>{{cat.text}}</p>
+<p class="margin">Предприятие(служба):{{cat.category}}</p>
+<hr>
+
+{% endfor %}
+
+{% endblock %}

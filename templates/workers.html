@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block base %}
+{% for doc in documents %}
+
+<p>{{doc.fio__fio}} - {{doc.count_fio}}</p>
+{% endfor %}
+
+{% endblock %}

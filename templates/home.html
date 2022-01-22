@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block base %}
+
+<div class="row">
+    <div class="col-3">
+
+        <ul class="home_category">
+            {% for cat in category %}
+            <li><a href="{% url 'category' pk=cat.pk%}" name="categories">{{cat.title}}</a></li>
+            {% endfor %}
+        </ul>
+        {% if messages %}
+        {% for msg in messages %}
+        <div class="alert alert-danger" role="alert">
+            {{msg}}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="col-9">
+        {% for hom in home %}
+        <a href="{% url 'detail' pk=hom.id %}">
+            <p>№{{hom.id}}. написал(а):{{hom.fio}}</p></a>
+        <p class="items-text">{{hom.text}}</p>
+        <div>категория:{{hom.category}}</div>
+        <div>категория:{{hom.date}}</div>
+        <hr>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

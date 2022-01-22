@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block base %}
+<form action="" method="POST">
+    {% csrf_token %}
+<!--    {{form.as_p}}-->
+<!--    <input type="submit" value="save">-->
+    <p>Предприятие(служба):<select>
+        {% for c in categories %}
+        <option name="category">{{c.title}}</option>
+        {% endfor %}
+    </select></p>
+    <p>Текст:<textarea name="text" cols="90" rows="20"></textarea></p>
+    <p>Дата выписки предписания:<input name="date" type="date"></p>
+    <p>Дата исполнения:<input name="date_answer" type="date"></p>
+    <p>Выполнил(а):<select >
+        {% for c in name %}
+        <option name="fio">{{c.fio}}</option>
+        {% endfor %}
+    </select></p>
+    <input class="btn btn-primary" type="submit" value="Сохранить">
+</form>
+{% endblock %}
