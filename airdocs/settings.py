@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-9c5vx+ven3d(4k
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-# DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+# DEBUG = boogit push origin masterl(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = []
 
