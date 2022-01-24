@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block base %}
+<p>Общее количество документов - {{docs}}</p>
 {% for doc in documents %}
-
 <p>{{doc.fio__fio}} - {{doc.count_fio}}</p>
 {% endfor %}
 

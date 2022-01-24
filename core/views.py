@@ -1,7 +1,7 @@
 import datetime
 
 from django.db.models import Q, Count
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from core.forms import DocsForm
 from core.models import Documents, Categories, Client
@@ -19,6 +19,14 @@ class DocsCreate(CreateView):
         context['categories'] = Categories.objects.all()
         context['name'] = Client.objects.all()
         return context
+
+
+class DocsUpdate(UpdateView):
+    model = Documents
+    template_name = 'update.html'
+    form_class = DocsForm
+    success_url = '/home/'
+    context_object_name = 'create'
 
 
 class DocsDetail(DetailView):
@@ -60,6 +68,7 @@ class Workers(ListView):
         context = super().get_context_data(**kwargs)
         context['documents'] = Documents.objects.values('fio__fio').annotate(count_fio=Count('fio'))
         context['docs'] = Documents.objects.count()
+        context['client'] = Client.objects.all()
         return context
 
 
@@ -71,3 +80,4 @@ class CategoryFilter(ListView):
     def get_queryset(self):
         category_filter = self.queryset.filter(category__id=self.kwargs['pk'])
         return category_filter
+

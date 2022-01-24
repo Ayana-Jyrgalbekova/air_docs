@@ -46,3 +46,14 @@ body{
 .margin{
     margin-left: 75%;
 }
+.margin_2{
+    margin-left: 45%;
+}
+.btn_a{
+    color:  #fff;
+	text-decoration: none;
+}
+.date_a{
+    color:  #842029;
+	text-decoration: none;
+}

@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 {% block base %}
 {% for cat in categories %}
-<p>№{{cat.id}}</p>
+<p>№{{cat.id}}
+<span class="margin">Предприятие(служба):{{cat.category}}</span></p>
 <p>{{cat.text}}</p>
-<p class="margin">Предприятие(служба):{{cat.category}}</p>
-<hr>
+
+<p class="">Дата выписки предписания:{{cat.date}}</p>
+<p class="margin">Дата исполнения:{{cat.date_answer }}</p>
+
+<p class="margin mb-3">Выполнил(а):{{cat.fio}}</p><hr>
 
 {% endfor %}
 

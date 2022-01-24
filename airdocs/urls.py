@@ -11,8 +11,8 @@ urlpatterns = [
     path('home/', DocsList.as_view(), name='home'),
     path('detail/<int:pk>/', DocsDetail.as_view(), name='detail'),
     path('category/<int:pk>/', CategoryFilter.as_view(), name='category'),
-    path('category/<int:pk>/', CategoryFilter.as_view(), name='workers'),
     path('workers/', Workers.as_view(), name='workers'),
+    path('update/<int:pk>/', DocsUpdate.as_view(), name='update')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
